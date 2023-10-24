@@ -1,19 +1,19 @@
 const {Schema, model} = require('mongoose');
-const validator = require('validator')
+const validator = require('validator');
 
 const userSchema = new Schema(
     {
         username: {
             type: String,
             unique: true,
-            required: 'Username is required',
+            required: true,
             trim: true,
 
         },
         email: {
             type: String,
             unique: true,
-            required: 'Email is required',
+            required: true,
             validate: [validator.isEmail, 'Invalid Email']
         },
         thoughts: [
