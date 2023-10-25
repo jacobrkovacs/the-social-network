@@ -3,6 +3,14 @@ const validator = require('validator');
 
 const userSchema = new Schema(
     {
+        fname: {
+            type: String,
+            required: true
+        },
+        lname: {
+            type: String,
+            required: true
+        },
         username: {
             type: String,
             unique: true,

@@ -6,7 +6,7 @@ module.exports = {
             const users = User.find();
             res.json(users)
         } catch (err) {
-            res.status(500).json(res);
+            res.status(500).json(err);
         }
     },
     async getSingleUser(req, res) {
