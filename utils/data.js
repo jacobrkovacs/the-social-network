@@ -5,7 +5,7 @@ module.exports = [
         username: 'jacobkovacs',
         email: 'jacobkovacs@gmail.com',
         thoughts: [],
-        friends: []
+        friends: ['chuckfinley']
     },
     {
         fname: 'Charles',
