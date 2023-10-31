@@ -4,6 +4,7 @@ const userData = [
         lname: 'Kovacs',
         username: 'jacobkovacs',
         email: 'jacobkovacs@gmail.com',
+        thoughts: [],
         friends: ['chuckfinley']
     },
     {
@@ -11,6 +12,7 @@ const userData = [
         lname: 'Finley',
         username: 'chuckfinley',
         email: 'chuckfinley@gmail.com',
+        thoughts: [],
         friends: ['jacobkovacs', 'bobbyp']
     },
     {
@@ -18,6 +20,7 @@ const userData = [
         lname: 'Par',
         username: 'bobbyp',
         email: 'robertpar@gmail.com',
+        thoughts: [],
         friends: ['chuckfinley', 'jacobkovacs']
     },
 ];

@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const {Schema, model} = require('mongoose').set('strictPopulate', false);
 const validator = require('validator');
 
 const userSchema = new Schema(
@@ -27,12 +27,12 @@ const userSchema = new Schema(
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'thoughts',
+                ref: 'Thought',
             }
         ],
         friends: [{
             type: Schema.Types.ObjectId,
-            ref: 'user',
+            ref: 'User',
         }]
     },
     {
@@ -43,7 +43,9 @@ const userSchema = new Schema(
     }
 );
 
-// userSchema.virtual('friendCount').get(() => {
+// userSchema
+// .virtual('friendCount')
+// .get(() => {
 //     return this.friends.length;
 // });
 

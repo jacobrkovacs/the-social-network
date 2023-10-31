@@ -1,4 +1,4 @@
-const {Schema, model, now} = require('mongoose');
+const {Schema, model, now} = require('mongoose').set('strictPopulate', false);;
 
 
 const reactionSchema = Schema({
@@ -14,7 +14,7 @@ const reactionSchema = Schema({
     username: {
         type: String,
         required: true,
-        ref: 'user'
+        ref: 'User'
     },
     createdAt: { 
         type: Date,
@@ -35,9 +35,9 @@ const thoughtSchema = new Schema(
             default: Date.now
         },
         username: {
-            type: String,
+            type: Schema.Types.ObjectId,
             required: true,
-            ref: 'user'
+            ref: 'User'
         },
          reactions: [reactionSchema]
     },
@@ -49,12 +49,12 @@ const thoughtSchema = new Schema(
     }
 );
 
-thoughtSchema
-.virtual('reactionCount')
-.get(() => {
-    return this.reactions.length;
-});
+// thoughtSchema
+// .virtual('reactionCount')
+// .get(() => {
+//     return this.reactions.length;
+// });
 
-const Thought = model('thoughts', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought

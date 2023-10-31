@@ -8,6 +8,6 @@ const {
 
 router.route('/').get(getUsers).post(createUser);
 
-router.route('/:userId').get(getSingleUser);
+router.route('/:username').get(getSingleUser);
 
 module.exports = router;
